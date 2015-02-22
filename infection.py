@@ -6,8 +6,7 @@ class Mentor:
         self.students.extend(student) #fills empty list with students
 
 def infect(user):
-    if user not in infected: #if the user isn't already infected
-        infected.append(user) #then the user is added to the list
+    infected = [user]
     for n in range(0,len(mentorList)): #outer loop ensures double checking
         for m in range(0,len(mentorList)): #check all the teachers
             if mentorList[m].name in infected: #if a teacher is infected

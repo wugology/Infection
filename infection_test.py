@@ -16,8 +16,7 @@ users = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "
 
 ## Infecting A, C, P, or any of their students will infect all of them.
 ## Infecting J, Q, or  any of their students will infect all of them.
-## Infecting Z or any of Z's students will only infect them.
+## Infecting Z or any of Z's students will only infect that class.
 
 for u in range(0,len(users)):
-    infected = []
     infect(users[u])
