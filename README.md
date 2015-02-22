@@ -7,7 +7,8 @@ Running `infection.py` will allow you to use the `Mentor` class as well as the f
 
 The `Mentor` class is a group of users who are assigned to either be a teacher or a student. After you have run `infection.py`, the `Mentor` class can be assigned as follows:
 
-```calculus = Mentor("Sal")
+```
+calculus = Mentor("Sal")
 calculus.add_student(["Jane", "Sophia", "Juan"])
 french = Mentor("Pierre")
 french.add_student(["Mohammed", "Jane", "Yossi"])
@@ -18,7 +19,8 @@ As you can see, Jane is in both Calculus and French! If anyone in either of thos
 
 To use the `infect(user)` function, you must first make a `mentorList` which contains all the classes, like this:
 
-```mentorList = [calculus, french, history]
+```
+mentorList = [calculus, french, history]
 ```
 
 Next, you can infect any user from the class list, like this:
