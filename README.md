@@ -3,7 +3,7 @@
 If a student or coach gets infected, then all the people in the class will get infected too! Some students and coaches are in multiple classes, so the infection can spread from class to class. This repo contains programs to simulate the spread of the infection.
 
 ###infection.py
-Running `infection.py` will allow you to use the `Coach` class and the function `infect(user)`, `getUserList()`, and `limitInfection(number)`. 
+Running `infection.py` will allow you to use the `Coach` class and the function `total_infection(user)`, `getUserList()`, and `limited_infection(number)`. 
 
 ###Coach
 The `Coach` class is a group of users who are assigned to either be a teacher or a student. After you have run `infection.py`, the `Coach` class can be assigned as follows:
@@ -24,7 +24,7 @@ Once you have created a few classes you must first make a `coachList` which cont
 ```
 >>> coachList = [calculus, french, history]
 ```
-Once you have created the `coachList`, you can use the other functions `getUsers()`, `infect(user)`, and `limitInfection(number)`.
+Once you have created the `coachList`, you can use the other functions `getUsers()`, `total_infection(user)`, and `limited_infection(number)`.
 
 ###getUserList()
 Simply run the command `getUserList()` and it will return a list of all users, including students and teachers. This function does not take any parameters.
@@ -33,30 +33,30 @@ Simply run the command `getUserList()` and it will return a list of all users, i
 ['Sal', 'Jane', 'Sophia', 'Juan', 'Pierre', 'Mohammed', 'Yossi', 'Maria', 'Pat', 'Lee', 'Alex']
 ```
 
-###infect(user)
-The `infect(user)` function will return a list of all users who will get infected if the input user is infected. To use the `infect(user)` function, type the name of a user (in quotes) like this:
+###total_infection(user)
+The `total_infection(user)` function will return a list of all users who will get infected if the input user is infected. To use the `total_infection(user)` function, type the name of a user (in quotes) like this:
 
 ```
->>> infect("Jane")
+>>> total_infection("Jane")
 ['Jane', 'Sal', 'Sophia', 'Juan', 'Pierre', 'Mohammed', 'Yossi']
 ```
 
-A number of test cases for `infect(user)` can be found in `infection_test.py`.
+A number of test cases for `total_infection(user)` can be found in `infection_test.py`.
 
-###limitInfection(number)
+###limited_infection(number)
 The `limitInfection` function will return a list of users who can be infected initially, where the outcome of the infection spread is less than or equal to the input number. For example:
 ```
->>> limitInfection(3)
+>>> limited_infection(3)
 Infecting any of the following users will limit the infection to 3 or fewer users: []
 ```
 As we can see, there are no users we can infect who will limit the spread of the disease to 3 users. This is because the smallest class, history, contains three students and one coach. Let's try 4:
 ```
->>> limitInfection(4)
+>>> limited_infection(4)
 Infecting any of the following users will limit the infection to 4 or fewer users: ['Maria', 'Pat', 'Lee', 'Alex']
 ```
 We can infect anyone from the history class, and the infection will be contained to 4 users!
 
-A number of test cases for `limitInfection(number)` can be found in `limit_infection_test.py`.
+A number of test cases for `limited_infection(number)` can be found in `limit_infection_test.py`.
 
 -----------------------------
 ###Data Visualization

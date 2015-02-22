@@ -19,4 +19,4 @@ users = getUserList()
 ## Infecting Z or any of Z's students will only infect that class.
 
 for u in range(0,len(users)):
-    infect(users[u])
+    total_infection(users[u])

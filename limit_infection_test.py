@@ -22,4 +22,4 @@ CoachList = [CoachA, CoachC, CoachJ, CoachP, CoachQ, CoachZ]
 ## Limiting the infection to 3 or fewer users will catch no users.
 
 for u in range(0,17):
-    limitInfection(u)
+    limited_infection(u)

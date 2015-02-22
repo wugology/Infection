@@ -18,7 +18,7 @@ def getUserList():
 
 
 
-def infect(user):
+def total_infection(user):
     infected = [user]
     for n in range(0,len(coachList)): #outer loop ensures double checking
         for m in range(0,len(coachList)): #check all the coaches
@@ -37,11 +37,11 @@ def infect(user):
 
 
 
-def limitInfection(N):
+def limited_infection(N):
     userList = getUserList()
     limitSpread = []
     for u in range(0,len(userList)): #checks all the users
-        infected = infect(userList[u]) #tries to infect the user
+        infected = total_infection(userList[u]) #tries to infect the user
         if len(infected) <= N: #if the infection is less than or equal to the target number
             limitSpread.append(userList[u]) #add the user to the list
     print "Infecting any of the following users will limit the infection to " + str(N) + " or fewer users: " + str(limitSpread)
