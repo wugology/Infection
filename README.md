@@ -6,7 +6,7 @@ If a student or coach gets infected, then all the people in the class will get i
 Running `infection.py` will allow you to use the `Coach` class and the function `total_infection(user)`, `getUserList()`, and `limited_infection(number)`. 
 
 ###Coach
-The `Coach` class is a group of users who are assigned to either be a teacher or a student. After you have run `infection.py`, the `Coach` class can be assigned as follows:
+The `Coach` class is a group of users who are assigned to either be a coach or a student. After you have run `infection.py`, the `Coach` class can be assigned as follows:
 
 ```
 >>> calculus = Coach("Sal")
@@ -18,8 +18,10 @@ The `Coach` class is a group of users who are assigned to either be a teacher or
 ```    
 As you can see, Jane is in both Calculus and French! If anyone in either of those classes gets infected, they all will! Luckily, if anyone in History class gets infected, the disease will stay confined to there.
 
+Future implementations of `Coach` may include other attributes like whether or not the entire class has been infected.
+
 ###coachList
-Once you have created a few classes you must first make a `coachList` which contains all the classes, like this:
+Once you have created a few classes you must make a `coachList` which contains all the classes, like this:
 
 ```
 >>> coachList = [calculus, french, history]
@@ -27,7 +29,7 @@ Once you have created a few classes you must first make a `coachList` which cont
 Once you have created the `coachList`, you can use the other functions `getUsers()`, `total_infection(user)`, and `limited_infection(number)`.
 
 ###getUserList()
-Simply run the command `getUserList()` and it will return a list of all users, including students and teachers. This function does not take any parameters.
+Simply run the command `getUserList()` and it will return a list of all users, including students and coachs. This function does not take any parameters.
 ```
 >>> getUserList()
 ['Sal', 'Jane', 'Sophia', 'Juan', 'Pierre', 'Mohammed', 'Yossi', 'Maria', 'Pat', 'Lee', 'Alex']
@@ -44,7 +46,7 @@ The `total_infection(user)` function will return a list of all users who will ge
 A number of test cases for `total_infection(user)` can be found in `infection_test.py`.
 
 ###limited_infection(number)
-The `limitInfection` function will return a list of users who can be infected initially, where the outcome of the infection spread is less than or equal to the input number. For example:
+The `limited_infection(number)` function will return a list of users who can be infected initially, where the outcome of the infection spread is less than or equal to the input number. For example:
 ```
 >>> limited_infection(3)
 Infecting any of the following users will limit the infection to 3 or fewer users: []
