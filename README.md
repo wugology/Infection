@@ -3,7 +3,7 @@
 If a student or mentor gets infected, then all the people in the class will get infected too! Some students and mentors are in multiple classes, so the infection can spread from class to class. This repo contains programs to simulate the spread of the infection.
 
 ###infection.py
-Running `infection.py` will allow you to use the `Mentor` class, the function `infect(user)`, the function `getUserList()`, and the function `limitInfection(number)`.
+Running `infection.py` will allow you to use the `Mentor` class and the function `infect(user)`, `getUserList()`, and `limitInfection(number)`. 
 
 ###Mentor
 The `Mentor` class is a group of users who are assigned to either be a teacher or a student. After you have run `infection.py`, the `Mentor` class can be assigned as follows:
@@ -41,7 +41,7 @@ The `infect(user)` function will return a list of all users who will get infecte
 ['Jane', 'Sal', 'Sophia', 'Juan', 'Pierre', 'Mohammed', 'Yossi']
 ```
 
-A number of test cases for `infection.py` can be found in `infection_test.py`.
+A number of test cases for `infect(user)` can be found in `infection_test.py`.
 
 ###limitInfection(number)
 The `limitInfection` function will return a list of users who can be infected initially, where the outcome of the infection spread is less than or equal to the input number. For example:
@@ -56,6 +56,7 @@ Infecting any of the following users will limit the infection to 4 or fewer user
 ```
 We can infect anyone from the history class, and the infection will be contained to 4 users!
 
+A number of test cases for `limitInfection(number)` can be found in `limit_infection_test.py`.
 
 -----------------------------
 ###Data Visualization
