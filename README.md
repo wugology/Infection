@@ -1,30 +1,30 @@
 ##Read Me!
 --------------------------------
-If a student or mentor gets infected, then all the people in the class will get infected too! Some students and mentors are in multiple classes, so the infection can spread from class to class. This repo contains programs to simulate the spread of the infection.
+If a student or coach gets infected, then all the people in the class will get infected too! Some students and coaches are in multiple classes, so the infection can spread from class to class. This repo contains programs to simulate the spread of the infection.
 
 ###infection.py
-Running `infection.py` will allow you to use the `Mentor` class and the function `infect(user)`, `getUserList()`, and `limitInfection(number)`. 
+Running `infection.py` will allow you to use the `Coach` class and the function `infect(user)`, `getUserList()`, and `limitInfection(number)`. 
 
-###Mentor
-The `Mentor` class is a group of users who are assigned to either be a teacher or a student. After you have run `infection.py`, the `Mentor` class can be assigned as follows:
+###Coach
+The `Coach` class is a group of users who are assigned to either be a teacher or a student. After you have run `infection.py`, the `Coach` class can be assigned as follows:
 
 ```
->>> calculus = Mentor("Sal")
+>>> calculus = Coach("Sal")
 >>> calculus.add_student(["Jane", "Sophia", "Juan"])
->>> french = Mentor("Pierre")
+>>> french = Coach("Pierre")
 >>> french.add_student(["Mohammed", "Jane", "Yossi"])
->>> history = Mentor("Maria")
+>>> history = Coach("Maria")
 >>> history.add_student(["Pat", "Lee", "Alex"])
 ```    
 As you can see, Jane is in both Calculus and French! If anyone in either of those classes gets infected, they all will! Luckily, if anyone in History class gets infected, the disease will stay confined to there.
 
-###mentorList
-Once you have created a few classes you must first make a `mentorList` which contains all the classes, like this:
+###coachList
+Once you have created a few classes you must first make a `coachList` which contains all the classes, like this:
 
 ```
->>> mentorList = [calculus, french, history]
+>>> coachList = [calculus, french, history]
 ```
-Once you have created the `mentorList`, you can use the other functions `getUsers()`, `infect(user)`, and `limitInfection(number)`.
+Once you have created the `coachList`, you can use the other functions `getUsers()`, `infect(user)`, and `limitInfection(number)`.
 
 ###getUserList()
 Simply run the command `getUserList()` and it will return a list of all users, including students and teachers. This function does not take any parameters.
@@ -49,7 +49,7 @@ The `limitInfection` function will return a list of users who can be infected in
 >>> limitInfection(3)
 Infecting any of the following users will limit the infection to 3 or fewer users: []
 ```
-As we can see, there are no users we can infect who will limit the spread of the disease to 3 users. This is because the smallest class, history, contains three students and one mentor. Let's try 4:
+As we can see, there are no users we can infect who will limit the spread of the disease to 3 users. This is because the smallest class, history, contains three students and one coach. Let's try 4:
 ```
 >>> limitInfection(4)
 Infecting any of the following users will limit the infection to 4 or fewer users: ['Maria', 'Pat', 'Lee', 'Alex']
