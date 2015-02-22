@@ -1,62 +1,30 @@
 mentorA = Mentor("A")
-mentorA.add_student(["B", "C", "D", "E", "F"])
+mentorA.add_student(["B", "C", "D", "E", "F"]) #C is teacher
 mentorC = Mentor("C")
-mentorC.add_student(["G", "H", "I"])
+mentorC.add_student(["G", "H", "I"]) #C is student of A
 mentorJ = Mentor("J")
-mentorJ.add_student(["K", "L", "M", "N", "O", "P", "Q"])
+mentorJ.add_student(["K", "L", "M", "N", "Q"]) #Q is teacher
+mentorP = Mentor("P")
+mentorP.add_student(["B", "E", "H", "C", "O"]) #contains O and students from A and C
 mentorQ = Mentor("Q")
-mentorQ.add_student(["R", "S", "T", "U", "V"])
+mentorQ.add_student(["R", "S", "T", "U", "V"]) #Q is student of J
 mentorZ = Mentor("Z")
-mentorZ.add_student(["W", "X", "Y"])
+mentorZ.add_student(["W", "X", "Y"]) #no connections with other classes
 
-mentorList = [mentorA, mentorC, mentorJ, mentorQ, mentorZ]
+mentorList = [mentorA, mentorC, mentorJ, mentorP, mentorQ, mentorZ]
+users = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Z", "Y", "Z"]
 
-## Infecting A, C, or any of A's or C's students will infect all of them.
+## Infecting A, C, P, or any of their students will infect all of them.
+## Infecting J, Q, or  any of their students will infect all of them.
+## Infecting Z or any of Z's students will only infect them.
 
-infected = [] #no infected users
-infect("A")
-#Returns: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+for u in range(0,len(users)):
+    infected = []
+    infect(users[u])
 
-infected = []
-infect("C")
-#Returns: ['C', 'A', 'B', 'D', 'E', 'F', 'G', 'H', 'I']
 
-infected = []
-infect("D")
-#Returns: ['D', 'A', 'B', 'C', 'E', 'F', 'G', 'H', 'I']
-
-infected = []
-infect("H")
-#Returns: ['H', 'C', 'G', 'I']
+# infect("G")
+# Returns: ['G', 'C', 'H', 'I', 'P', 'B', 'E', 'O']
 ## BUG: because mentorC is listed after mentorA in the mentorList,
 ## the infection doesn't spread backwards to A's class
-
-
-## Infecting J, Q, or  any of J's or Q's students will infect all of them.
-infected = []
-infect("J")
-#Returns: ['J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V']
-
-infected = []
-infect("Q")
-#Returns: ['Q', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'V']
-
-infected = []
-infect("M")
-#Returns: ['M', 'J', 'K', 'L', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V']
-
-infected = []
-infect("T")
-#Returns: ['T', 'Q', 'R', 'S', 'U', 'V']
-## BUG: because mentorQ is listed after mentorJ in the mentorList,
-## the infection doesn't spread backwards to J's class
-
-
-## Infecting Z or any of Z's students will only infect them.
-infected = []
-infect("Z")
-#Returns: ['Z', 'W', 'X', 'Y']
-
-infected = []
-infect("W")
-#Returns: ['W', 'Z', 'X', 'Y']
+## This bug affects G, H, I, P, O, R, S, T, U, and V
