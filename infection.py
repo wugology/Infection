@@ -5,6 +5,19 @@ class Mentor:
     def add_student(self, student):
         self.students.extend(student) #fills empty list with students
 
+
+def getUserList():
+    userList = []
+    for n in range(0,len(mentorList)):
+        if mentorList[n].name not in userList:
+            userList.append(mentorList[n].name)
+        for s in range(0,len(mentorList[n].students)):
+            if mentorList[n].students[s] not in userList:
+                userList.append(mentorList[n].students[s])
+    return userList
+
+
+
 def infect(user):
     infected = [user]
     for n in range(0,len(mentorList)): #outer loop ensures double checking
@@ -20,6 +33,17 @@ def infect(user):
                         for j in range(0,len(mentorList[m].students)): #check all the teacher's students
                             if mentorList[m].students[j] not in infected: #if the student isn't infected
                                 infected.append(mentorList[m].students[j]) #infect the student
-    print infected
+    return infected
+
+
+
+def limitInfection(N):
+    userList = getUserList()
+    limitSpread = []
+    for u in range(0,len(userList)):
+        infected = infect(userList[u])
+        if len(infected) <= N:
+            limitSpread.append(userList[u])
+    print "Infecting any of the following users will limit the infection to " + str(N) + " or fewer users: " + str(limitSpread)
 
 

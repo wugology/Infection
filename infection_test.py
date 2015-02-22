@@ -12,7 +12,7 @@ mentorZ = Mentor("Z")
 mentorZ.add_student(["W", "X", "Y"]) #no connections with other classes
 
 mentorList = [mentorA, mentorC, mentorJ, mentorP, mentorQ, mentorZ]
-users = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+users = getUserList()
 
 ## Infecting A, C, P, or any of their students will infect all of them.
 ## Infecting J, Q, or  any of their students will infect all of them.
