@@ -29,7 +29,7 @@ Once you have created a few classes you must make a `coachList` which contains a
 Once you have created the `coachList`, you can use the other functions `getUsers()`, `total_infection(user)`, and `limited_infection(number)`.
 
 ###getUserList()
-Simply run the command `getUserList()` and it will return a list of all users, including students and coachs. This function does not take any parameters.
+Simply run the command `getUserList()` and it will return a list of all users, including students and coaches. This function does not take any parameters.
 ```
 >>> getUserList()
 ['Sal', 'Jane', 'Sophia', 'Juan', 'Pierre', 'Mohammed', 'Yossi', 'Maria', 'Pat', 'Lee', 'Alex']
@@ -62,7 +62,7 @@ A number of test cases for `limited_infection(number)` can be found in `limit_in
 
 -----------------------------
 ###Data Visualization
-A simple visualization of this infection algorithm can be seen [here](https://wugology.shinyapps.io/Infection/). A sample situation similar to the one in `infection_test.py` is given. You can choose who to infect first. You can also choose what color the plot will display in!
+A simple visualization of this infection algorithm can be seen [here](https://wugology.shinyapps.io/Infection/). A sample situation similar to the one in `infection_test.py` is given. You can choose who to infect first. You can also choose the color in which the plot will display!
 
 The code for this visualization is contained in `ui.r` and `server.r`. Please note that this visualization comes pre-loaded with the answers, given the conditions in the sample situation. It does not actually implement the above algorithms, and therefore will not work under other conditions. However, it has a simple, user-friendly interface, and serves as a visual example of the infection spread.
 
