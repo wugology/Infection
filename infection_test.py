@@ -11,7 +11,7 @@ CoachQ.add_student(["R", "S", "T", "U", "V"]) #Q is student of J
 CoachZ = Coach("Z")
 CoachZ.add_student(["W", "X", "Y"]) #no connections with other classes
 
-CoachList = [CoachA, CoachC, CoachJ, CoachP, CoachQ, CoachZ]
+coachList = [CoachA, CoachC, CoachJ, CoachP, CoachQ, CoachZ]
 users = getUserList()
 
 ## Infecting A, C, P, or any of their students will infect all of them.

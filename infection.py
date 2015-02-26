@@ -1,3 +1,5 @@
+import numpy
+
 class Coach:
     def __init__(self, name):
         self.name = name
@@ -9,13 +11,11 @@ class Coach:
 def getUserList():
     userList = []
     for n in range(0,len(coachList)): #checks all the coaches' classes
-        if coachList[n].name not in userList:
-            userList.append(coachList[n].name) #adds coach's name
+        userList.append(coachList[n].name) #adds coach's name
         for s in range(0,len(coachList[n].students)):
-            if coachList[n].students[s] not in userList:
-                userList.append(coachList[n].students[s]) #adds students' names
+            userList.append(coachList[n].students[s]) #adds students' names
+    userList = numpy.unique(userList)
     return userList
-
 
 
 def total_infection(user):
@@ -36,7 +36,6 @@ def total_infection(user):
     return infected
 
 
-
 def limited_infection(N):
     userList = getUserList()
     limitSpread = []
@@ -45,5 +44,3 @@ def limited_infection(N):
         if len(infected) <= N: #if the infection is less than or equal to the target number
             limitSpread.append(userList[u]) #add the user to the list
     print "Infecting any of the following users will limit the infection to " + str(N) + " or fewer users: " + str(limitSpread)
-
-
